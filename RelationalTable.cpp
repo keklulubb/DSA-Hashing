@@ -21,7 +21,19 @@ void RelationalTable::addRow(const string values[], int size) //adds a row of va
 
 vector<string> RelationalTable::removeRow(const string& pkValue)//removes the row associated with the key passed in "pkValue"
 {
-    
+    if(!rows[pkValue])
+    {
+        return vector<string> empty;
+    }
+    else
+    {
+        vector<string> row = rows[pkValue]->second;
+        auto it = begin(row);
+        for (; it < row.size(); it++)
+        {
+            
+        }
+    }
 }
 
 void RelationalTable::setValue(const string& pkValue, const string& fieldName, const string& fieldValue)//accesses the record associated with the key "pkValue" and sets the value of the field identified by the name "fieldName" to "fieldValue"
@@ -46,5 +58,5 @@ void RelationalTable::removeField(const string& fieldName)//removes the field ca
 
 int RelationalTable::getSize() const //returns the number of rowa in the table
 {
-    
+    return rows.size();
 }

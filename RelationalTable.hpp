@@ -1,5 +1,5 @@
-#ifndef RELATIONALTABLE.HPP
-#define RELATIONALTABLE.HPP
+#ifndef RELATIONALTABLE_HPP
+#define RELATIONALTABLE_HPP
 
 #include <iostream>
 #include <vector>
@@ -23,6 +23,11 @@ public:
     void removeField(const string& fieldName);
     
     int getSize() const;
+    
+    //extra:
+    
+    //hash function method
+    //is empty method - load threshold = 0
     
 private:
     
